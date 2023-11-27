@@ -1,0 +1,28 @@
+﻿@page
+@model RedirectFlow
+@{
+    ViewData["Title"] = "Redirect to";
+    string token = Request.Query["token"];
+}
+
+<h1 class="text-danger">
+    Development Mode
+</h1>
+
+<p>
+    <h1 class="text-info">
+        Login efetudo com sucesso
+    </h1>
+ 
+<p>
+    @if (Model.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+            <br />
+            <strong>Token:</strong> <code>@token</code>
+        </p>
+    }
+
+    <h2 class="text-info">Você será redirecionado</h2>
+</p>

@@ -1,0 +1,39 @@
+﻿@using nhmatsumoto.sso.demo.web.Areas.Identity.Pages.Account;
+@model LoginModel
+
+
+<div class="card">
+    <div class="card-body">
+        <form id="account" method="post" class="row g-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+        <div class="col-md-12 mb-3">
+            <label asp-for="Input.Email" class="form-label">Email</label>
+            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="exemplo@email.com" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+        <div class="col-md-12 mb-3">
+            <label asp-for="Input.Password" class="form-label">Senha</label>
+                <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Senha" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+       @* <div class="col-md-12 mb-3">
+            <div class="form-check">
+                <input class="form-check-input" asp-for="Input.RememberMe" />
+                <label class="form-check-label" asp-for="Input.RememberMe"> Check</label>
+            </div>
+        </div>*@
+        <div class="col-md-12">
+            <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Acessar</button>
+        </div>
+        <div class="col-md-12">
+            <p>
+                <a asp-area="Identity" asp-page="/Account/Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-decoration-none">Cadastre-se</a>
+            </p>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

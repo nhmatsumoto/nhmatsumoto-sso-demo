@@ -1,0 +1,14 @@
+﻿@page
+@model LoginModel
+
+
+<div class="row-cols-1">
+    @await Html.PartialAsync("_LoginFormPartial", Model)
+</div>
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
